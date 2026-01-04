@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Movies 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f7f6;
+            color: #1a1a1a;
+        }
+
+        .movie-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .watch-btn {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 700;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .watch-btn:hover {
+            background-color: #404040;
+        }
+
+        .category-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto mb-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h1 class="text-5xl font-extrabold tracking-tight mb-2">Free Movies 🎬🍿</h1>
+                <p class="text-gray-500 text-lg font-medium">Watch Full Movie Without Any Ad interruptions</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="movie-list">
+            <!-- Movies are injected via JavaScript -->
+        </div>
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-24 pb-12 text-center text-gray-400 text-sm font-medium border-t border-gray-200 pt-8">
+        &copy; 2025 Movie Preview Platform • Watch Full Movie Without Any Ad interruptions
+    </footer>
+
+    <script>
+        const movies = [
+            {
+                title: "Ne Zha 2",
+                release: "2025",
+                genre: "Animation / Action",
+                videoId: "ETlOSBR92Fs",
+                watchUrl: "https://singingfiles.com/1865539",
+                description: "The epic sequel to the Chinese blockbuster. Ne Zha and Ao Bing face new celestial challenges."
+            },
+            {
+                title: "Zootopia 2",
+                release: "Nov 2025",
+                genre: "Animation / Comedy",
+                videoId: "BjkIOU5PhyQ",
+                watchUrl: "https://singingfiles.com/1865538",
+                description: "Judy Hopps and Nick Wilde return to solve a new case in the bustling mammal metropolis."
+            },
+            {
+                title: "Lilo & Stitch",
+                release: "May 2025",
+                genre: "Live-Action / Family",
+                videoId: "VWqJifMMgZE",
+                watchUrl: "https://singingfiles.com/1865537",
+                description: "The live-action adaptation of the Disney classic about a girl and her blue alien friend."
+            },
+            {
+                title: "A Minecraft Movie",
+                release: "Apr 2025",
+                genre: "Adventure / Fantasy",
+                videoId: "8B1EtVPBSMw",
+                watchUrl: "https://singingfiles.com/1865536",
+                description: "The world of blocks comes to life starring Jason Momoa and Jack Black as Steve."
+            },
+            {
+                title: "Avatar: Fire and Ash",
+                release: "Dec 2025",
+                genre: "Sci-Fi / Adventure",
+                videoId: "nb_fFj_0rq8",
+                watchUrl: "https://singingfiles.com/1865535",
+                description: "James Cameron explores the darker side of Pandora with the 'Ash People' fire tribe."
+            }
+        ];
+
+        function renderMovies() {
+            const container = document.getElementById('movie-list');
+            container.innerHTML = movies.map(movie => `
+                <div class="movie-card">
+                    <!-- TOP: Title and Genre -->
+                    <div class="p-5">
+                        <div class="category-tag mb-1 text-xs">${movie.genre}</div>
+                        <h2 class="text-xl font-extrabold tracking-tight truncate">${movie.title}</h2>
+                    </div>
+
+                    <!-- MIDDLE: Trailer -->
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/${movie.videoId}" 
+                            title="${movie.title} Trailer" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- BOTTOM: Description and Button -->
+                    <div class="p-5 flex flex-col flex-grow">
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
+                            ${movie.description}
+                        </p>
+                        
+                        <div class="mt-auto flex flex-col gap-3">
+                            <div class="flex justify-between items-center text-xs font-bold border-t border-gray-50 pt-3">
+                                <span class="text-gray-400 uppercase tracking-widest">Release</span>
+                                <span>${movie.release}</span>
+                            </div>
+                            <a href="${movie.watchUrl}" target="_blank" class="watch-btn text-sm">
+                                <i class="fa-solid fa-play text-[10px]"></i>
+                                Watch for Free
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        window.onload = renderMovies;
+    </script>
+</body>
+</html>
